@@ -24,7 +24,8 @@ For the purpose of this question, assume that all deliveries are considered succ
 * Only consider the date when determining if the order is late; ignore the time.
 * Working Days are defined as Mon - Sat, Excluding Public Holidays.
 * SLA calculation begins from the next day after pickup (Day 0 = Day of Pickup; Day 1 = Next Day after Pickup)
-### 2nd Attempt must be no later than 3 working days after the 1st Attempt, regardless of origin to destination route
+
+2nd Attempt must be no later than 3 working days after the 1st Attempt, regardless of origin to destination route
 (Day 0 = Day of 1st Attempt; Day 1 = Next Day after 1st Attempt).
 
 Only consider the date when determining if the order is late; ignore the time.

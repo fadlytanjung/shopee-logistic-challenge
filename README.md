@@ -16,44 +16,39 @@ Identify all the orders that are considered late depending on the Service Level 
 For the purpose of this question, assume that all deliveries are considered successful by the second attempt.
 
 # Basic Concepts
-Each orderid represents a distinct transaction on Shopee.
-SLA can vary across each route (A route is defined as Seller’s Location to Buyer’s Location) - Refer to SLA_matrix.xlsx
-Pick Up Time is defined as the time when the 3PL picks up the parcel and begins to process for delivery. It marks the start of the SLA calculation.
-Delivery Attempt is defined as an attempt made by the 3PL to deliver the parcel to the customer. It may or may not be delivered successfully. In the case when it is unsuccessful, a 2nd attempt will be made. A parcel that has no 2nd attempt is deemed to have been successfully delivered on the 1st attempt.
-All time formats are stored in epoch time based on Local Time (GMT+8).
-Only consider the date when determining if the order is late; ignore the time.
-Working Days are defined as Mon - Sat, Excluding Public Holidays.
-SLA calculation begins from the next day after pickup (Day 0 = Day of Pickup; Day 1 = Next Day after Pickup)
-2nd Attempt must be no later than 3 working days after the 1st Attempt, regardless of origin to destination route (Day 0 = Day of 1st Attempt; Day 1 = Next Day after 1st Attempt).
+* Each orderid represents a distinct transaction on Shopee.
+* SLA can vary across each route (A route is defined as Seller’s Location to Buyer’s Location) - Refer to SLA_matrix.xlsx
+* Pick Up Time is defined as the time when the 3PL picks up the parcel and begins to process for delivery. It marks the start of the SLA calculation.
+* Delivery Attempt is defined as an attempt made by the 3PL to deliver the parcel to the customer. It may or may not be delivered successfully. In the case when it is unsuccessful, a 2nd attempt will be made. A parcel that has no 2nd attempt is deemed to have been successfully delivered on the 1st attempt.
+* All time formats are stored in epoch time based on Local Time (GMT+8).
+* Only consider the date when determining if the order is late; ignore the time.
+* Working Days are defined as Mon - Sat, Excluding Public Holidays.
+* SLA calculation begins from the next day after pickup (Day 0 = Day of Pickup; Day 1 = Next Day after Pickup)
+### 2nd Attempt must be no later than 3 working days after the 1st Attempt, regardless of origin to destination route
+(Day 0 = Day of 1st Attempt; Day 1 = Next Day after 1st Attempt).
 
 Only consider the date when determining if the order is late; ignore the time.
 
 Assume the following Public Holidays: 
 
-2020-03-08 (Sunday);
-2020-03-25 (Wednesday);
-2020-03-30 (Monday);
-2020-03-31 (Tuesday)
-Submission Format
+- 2020-03-08 (Sunday);
+- 2020-03-25 (Wednesday);
+- 2020-03-30 (Monday);
+- 2020-03-31 (Tuesday)
+
+### Submission Format
 Check each delivery order and determine whether it is late.
 
 Two columns required:
 
-orderid.
-is_late: assign value 1 if the order is late, otherwise 0.
-orderid
+* orderid.
+* is_late: assign value 1 if the order is late, otherwise 0.
+orderid | is_late
+--------|--------
+1955512445 | 0
+1955598428 | 1
 
-is_late
-
-1955512445
-
-0
-
-1955598428
-
-1
-
-Your submission should have 3,176,313 rows (excluding headers), each with 2 columns.
+### Your submission should have 3,176,313 rows (excluding headers), each with 2 columns.
 
 Tips:
 1) You are advised to run your tests on a sample of the dataset first.

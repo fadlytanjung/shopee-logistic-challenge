@@ -44,6 +44,7 @@ Two columns required:
 
 * orderid.
 * is_late: assign value 1 if the order is late, otherwise 0.
+
 orderid | is_late
 --------|--------
 1955512445 | 0
